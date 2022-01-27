@@ -42,7 +42,7 @@ Our baseline accuracy is 58.6% and it means that we can simply predict everythin
 
 Top 20 Highest Possibilities Words from our final model:
 
-<img src='./images/top_predictors.png'>
+<img src='./images/top_predictors.jpg'>
 
 ---
 ### Datasets
