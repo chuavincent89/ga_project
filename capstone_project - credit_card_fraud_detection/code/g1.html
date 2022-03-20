@@ -1,0 +1,108 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 500px;
+            height: 500px;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"id": "cc1", "label": "cc1", "shape": "dot", "size": 10}, {"id": "grocery_net", "label": "grocery_net", "shape": "dot", "size": 10}, {"id": "health_fitness", "label": "health_fitness", "shape": "dot", "size": 10}, {"id": "travel", "label": "travel", "shape": "dot", "size": 10}, {"id": "shopping_net", "label": "shopping_net", "shape": "dot", "size": 10}, {"id": "shopping_pos", "label": "shopping_pos", "shape": "dot", "size": 10}, {"id": "gas_transport", "label": "gas_transport", "shape": "dot", "size": 10}, {"id": "kids_pets", "label": "kids_pets", "shape": "dot", "size": 10}, {"id": "misc_net", "label": "misc_net", "shape": "dot", "size": 10}, {"id": "grocery_pos", "label": "grocery_pos", "shape": "dot", "size": 10}, {"id": "home", "label": "home", "shape": "dot", "size": 10}, {"id": "misc_pos", "label": "misc_pos", "shape": "dot", "size": 10}, {"id": "entertainment", "label": "entertainment", "shape": "dot", "size": 10}, {"id": "personal_care", "label": "personal_care", "shape": "dot", "size": 10}, {"id": "food_dining", "label": "food_dining", "shape": "dot", "size": 10}, {"id": "cc2", "label": "cc2", "shape": "dot", "size": 10}, {"id": "cc3", "label": "cc3", "shape": "dot", "size": 10}]);
+        edges = new vis.DataSet([{"from": "cc1", "to": "grocery_net", "weight": 1}, {"from": "cc1", "to": "health_fitness", "weight": 1}, {"from": "cc1", "to": "travel", "weight": 1}, {"from": "cc1", "to": "shopping_net", "weight": 1}, {"from": "cc1", "to": "shopping_pos", "weight": 1}, {"from": "cc1", "to": "gas_transport", "weight": 1}, {"from": "cc1", "to": "kids_pets", "weight": 1}, {"from": "cc1", "to": "misc_net", "weight": 1}, {"from": "cc1", "to": "grocery_pos", "weight": 1}, {"from": "cc1", "to": "home", "weight": 1}, {"from": "cc1", "to": "misc_pos", "weight": 1}, {"from": "cc1", "to": "entertainment", "weight": 1}, {"from": "cc1", "to": "personal_care", "weight": 1}, {"from": "cc1", "to": "food_dining", "weight": 1}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
