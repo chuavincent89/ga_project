@@ -61,7 +61,7 @@ __*AutoML Model Results (Sorted by F1 Score):*__
 |---|---|---|---|---|---|---|---|
 |xgboost (tuned)| 0.9994|	0.9997|	0.9400|	0.9561|	0.9479|	0.9476|	0.9477|
 
-Risk and Compliance team can refer the top predictors and features effect from plot and summary chart below. The team can also monitor the credit card transactions via __Credit Card Monitoring Dashboard__ at [Tableau Public](https://public.tableau.com/app/profile/vincent.chua/viz/frauddetection_16470019928680/Dashboard1#1). *(The data shows in the Dashboard is from test dataset with predicted outcome from my best tuned model)*
+Risk and Compliance team can refer the top predictors and features effect from plot and summary chart below. The team can also monitor the credit card transactions via __Credit Card Monitoring Dashboard__ at [Tableau Public](https://public.tableau.com/app/profile/vincent.chua/viz/frauddetection_16470019928680/Dashboard2). *(The data shows in the Dashboard is from test dataset with predicted outcome from my best tuned model)*
 
 __Top Predictors Plot:__
 <p align="center">
@@ -153,4 +153,4 @@ From the predictors and features above, it shows that the model is able to detec
 
 3) This model have its limitation that it was build based on US States' data and it may not be able to generalized to unseen data outside the US states. Besides that, the model also detect the fraud heavily rely on the spending behaviors, it may have the limitation if the credit card has not been used at all by the original cardholder. It will not have the spending behavior record, and the model may not able to detect it accurately.
 
-4) I have build the Credit Card Monitoring Dashboard via [Tableau Public](https://public.tableau.com/app/profile/vincent.chua/viz/frauddetection_16470019928680/Dashboard1#1), the Risk and Compliance Team can monitor the credit card transactions via different age groups, geographically, timeline trends, different categories and identify the predicted outcome with anomaly score shown on each individual credit card.
+4) I have build the Credit Card Monitoring Dashboard via [Tableau Public](https://public.tableau.com/app/profile/vincent.chua/viz/frauddetection_16470019928680/Dashboard2), the Risk and Compliance Team can monitor the credit card transactions via different age groups, geographically, timeline trends, different categories and identify the predicted outcome with anomaly score shown on each individual credit card.
