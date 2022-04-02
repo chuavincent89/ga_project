@@ -128,7 +128,7 @@ If you would like to download the codebook and run it on your machine, you will 
 
 4) From the RFM Analysis, we segmentize the customer into 5 segments which are Top_Cust, High_value_Cust, Medium_Value_cust, Low_Value_Cust and Lost_Cust. 14% of the credit cards fall under Top Cust and High Value Cust segments, while 26% of credit cards fall in the bottom segment - Lost Cust. Lost Cust also has the highest Fraud Transactions Rate (2%) among the customer segments, while the lowest Fraud Transactions Rate (0.26%) is under Top Cust segment. It means that the Lost Cust Segment have about 10 times higher chances to have fraud transaction than Top Cust Segment.
 
-5) From our final model, we manage to identify the top predictors and features that important to detect credit card fraud transactions. The top 3 predictors are Average and Max Transaction Amount in the last 24 hours and grocery_pos Category. Besides the top 3 predictors, we also identified features that have strong effect on our target from SHAP Summary Chart. Transaction Amount, previous Transaction Amount, Average Transaction amount in last 5 minutes and 7 days are the features have positive impact on detecting whether or not the credit card transaction is fraud transaction.
+5) From our final model, we manage to identify the top predictors and features that important to detect credit card fraud transactions. The top 3 predictors are Average and Max Transaction Amount in the last 24 hours and grocery_pos Category. Besides the top 3 predictors, we also identified features that have strong effect on our target from SHAP Summary Chart. Transaction Amount, previous Transactions amount, previous transactions amount, average transaction amount in last 7 days, minimum transaction amount in last 30 days and maximum merchant transaction amount in last 30 days are the features with strong positive impact on detecting the transaction as fraud transactions.
 
 
 
@@ -146,8 +146,9 @@ In this project, we manage to accomplish two goals that specified in our problem
 The 4 features with strong effects and impact on target are:
 1. Credit Card Transaction Amount *(amt)*
 2. Previous/Last Credit Card Transaction Amount *(pre_amt)*
-3. Average Transaction Amount in last 5 minutes *(avg_last_5T)*
-4. Average Transaction Amount in last 7 days *(avg_last_7d)*
+3. Average Transaction Amount in last 7 days *(avg_last_7d)*
+4. Minimum Transaction Amount in last 30 days *(min_last_30d)*
+5. Maximum Merchant Transaction Amount in last 30 days *(max_merch_last_7d)*
 
 From the predictors and features above, it shows that the model is able to detect the fraud by the difference in spending behaviors and transactions amount. Which it make sense that the fraudster usually have high chance to have different spending behaviors as compared to the credit cardholder did.
 
