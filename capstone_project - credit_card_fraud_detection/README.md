@@ -126,9 +126,11 @@ If you would like to download the codebook and run it on your machine, you will 
 
 3) State of AK has the highest fraud transaction rate out the rest of the state with credit card transactions 1000 and above. The lowest fraud transaction rate happens to be in state of ID. AK have about 8.5 times higher fraud transaction rate than ID.
 
-4) From the RFM Analysis, we segmentize the customer into 5 segments which are Top_Cust, High_value_Cust, Medium_Value_cust, Low_Value_Cust and Lost_Cust. 14% of the credit cards fall under Top Cust and High Value Cust segments, while 26% of credit cards fall in the bottom segment - Lost Cust. Lost Cust also has the highest Fraud Transactions Rate (2%) among the customer segments, while the lowest Fraud Transactions Rate (0.26%) is under Top Cust segment. It means that the Lost Cust Segment have about 10 times higher chances to have fraud transaction than Top Cust Segment.
+4) From the RFM Analysis, we segmentize the customer into 5 segments which are Top_Cust, High_value_Cust, Medium_Value_cust, Low_Value_Cust and Lost_Cust. 13% of the credit cards fall under Top Cust and High Value Cust segments, while 26% of credit cards fall in the bottom segment - Lost Cust. Lost Cust also has the highest Fraud Transactions Rate (2%) among the customer segments, while the lowest Fraud Transactions Rate (0.26%) is under Top Cust segment. It means that the Lost Cust Segment have about 10 times higher chances to have fraud transaction than Top Cust Segment.
 
 5) From our final model, we manage to identify the top predictors and features that important to detect credit card fraud transactions. The top 3 predictors are Average and Max Transaction Amount in the last 24 hours and grocery_pos Category. Besides the top 3 predictors, we also identified features that have strong effect on our target from SHAP Summary Chart. Transaction Amount, previous Transactions amount, previous transactions amount, average transaction amount in last 7 days, minimum transaction amount in last 30 days and maximum merchant transaction amount in last 30 days are the features with strong positive impact on detecting the transaction as fraud transactions.
+
+6) This model have its limitation that it was build based on US States' data and it may not be able to generalized to unseen data outside the US states. Besides that, the model also detect the fraud heavily rely on the spending behaviors, it may have the limitation if the credit card has not been used at all by the original cardholder. It will not have the spending behavior record, and the model may not able to detect it accurately.
 
 
 
@@ -150,8 +152,8 @@ The 4 features with strong effects and impact on target are:
 4. Minimum Transaction Amount in last 30 days *(min_last_30d)*
 5. Maximum Merchant Transaction Amount in last 30 days *(max_merch_last_7d)*
 
-From the predictors and features above, it shows that the model is able to detect the fraud by the difference in spending behaviors and transactions amount. Which it make sense that the fraudster usually have high chance to have different spending behaviors as compared to the credit cardholder did.
+From the predictors and features above, it shows that the model is able to detect the fraud by the difference in spending behaviors and transactions amount. Which it make sense that the fraudster usually have high chance to have different spending behaviors as compared to the credit cardholder did. The team can also implement specific action plan strategically to fight against the financial crime.
 
-3) This model have its limitation that it was build based on US States' data and it may not be able to generalized to unseen data outside the US states. Besides that, the model also detect the fraud heavily rely on the spending behaviors, it may have the limitation if the credit card has not been used at all by the original cardholder. It will not have the spending behavior record, and the model may not able to detect it accurately.
+3) In order to reduce the negative implications and user experience with the false alarm triggered, the team can implement the additional authentication via phone app / sms to approve suspicious transactions (predicted as fraud by the model). This is to avoid transactions on halt unnecessarily and cause the bad user experience with the bank's facility.
 
 4) I have build the Credit Card Monitoring Dashboard via [Tableau Public](https://public.tableau.com/app/profile/vincent.chua/viz/frauddetection_16470019928680/Dashboard2), the Risk and Compliance Team can monitor the credit card transactions via different age groups, geographically, timeline trends, different categories and identify the predicted outcome with anomaly score shown on each individual credit card.
